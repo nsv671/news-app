@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>News App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="main-nav container flex">
+        <a href="#" onclick="reload()">
+          <img src="./logo/Logo.png" alt="News app logo" />
+        </a>
+
+        <ul class="nav-links flex">
+          <li class="nav-link-hover" onclick="onNavLinkClick('ipl')">IPL</li>
+          <li class="nav-link-hover" onclick="onNavLinkClick('Business')">
+            Business
+          </li>
+          <li class="nav-link-hover" onclick="onNavLinkClick('Technology')">
+            Technology
+          </li>
+          <li class="nav-link-hover" onclick="onNavLinkClick('Science')">
+            Science
+          </li>
+          <li class="nav-link-hover" onclick="onNavLinkClick('Politics')">
+            Politics
+          </li>
+        </ul>
+
+        <div class="search flex">
+          <input
+            type="text"
+            id="search-query"
+            class="search-query"
+            placeholder="e.g. stocks"
+          />
+          <button class="search-button" id="search-button">Search</button>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <div class="news-cards container flex"></div>
+    </main>
+
+    <template class="template-news-card">
+      <div class="news-card">
+        <div class="news-card-header">
+          <img
+            src="https://placeholder.pics/svg/360x240"
+            alt="place holder"
+            id="news-card-img"
+          />
+        </div>
+        <div class="news-card-content flex">
+          <h3 id="news-content-header">News Card content header</h3>
+          <h6 class="flex">
+            <span class="source" id="source">Source.com</span>
+            <span class="date" id="date">23/05/2023</span>
+          </h6>
+          <p id="news-desc">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
+            ipsa ex cumque illum possimus aspernatur vero sapiente dolorem
+            mollitia! Omnis?
+          </p>
+        </div>
+      </div>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>
