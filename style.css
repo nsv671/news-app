@@ -75,9 +75,12 @@ nav {
   letter-spacing: 0.1rem;
 }
 
-.nav-link-hover:hover,
+.nav-link-hover:hover {
+  color: #000;
+}
 .nav-link-hover.active {
   color: #000;
+  font-weight: 500;
 }
 
 .nav-link-hover:active {
@@ -103,6 +106,7 @@ nav {
 
 .search-button {
   font-family: inherit;
+  cursor: pointer;
   color: #fff;
   background-color: #333;
   height: 100%;
@@ -116,16 +120,18 @@ nav {
   margin-top: 14rem;
   flex-wrap: wrap;
   align-items: flex-start;
+  justify-content: space-between;
 }
 
 .news-card {
-  width: 36rem;
+  width: 39rem;
   min-height: 42rem;
   box-shadow: 1px 1px 4px #333;
   border-radius: 4px;
   overflow: hidden;
   transition: all 0.3s ease;
-  margin: 0 2.6rem 4.6rem;
+  margin-bottom: 3.6rem;
+  cursor: pointer;
 }
 
 .news-card:hover {

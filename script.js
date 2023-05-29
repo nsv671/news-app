@@ -11,11 +11,10 @@ function reload() {
 async function fetchNews(query) {
   const res = await fetch(`${URL}${query}&apiKey=${API_KEY}`);
   const data = await res.json();
-  console.log(data);
   dataBind(data.articles);
 }
 
-async function dataBind(articles) {
+function dataBind(articles) {
   const newsCardsContainer = document.querySelector('.news-cards');
   const templateNewsCard = document.querySelector('.template-news-card');
 
@@ -32,7 +31,7 @@ async function dataBind(articles) {
   });
 }
 
-async function fillDataInCards(cloneCard, article) {
+function fillDataInCards(cloneCard, article) {
   const newsImage = cloneCard.getElementById('news-card-img');
   const newsContent = cloneCard.getElementById('news-desc');
   const newsTitle = cloneCard.getElementById('news-content-header');
@@ -44,15 +43,39 @@ async function fillDataInCards(cloneCard, article) {
     })
     .split(',')[0];
 
-  console.log(date);
-
   newsImage.src = article.urlToImage;
   newsContent.innerHTML = article.description;
   newsTitle.innerHTML = article.title;
   newsSource.innerHTML = article.source.name;
   newsDate.innerHTML = date;
+
+  cloneCard.firstElementChild.addEventListener('click', () => {
+    console.log('clicked');
+    window.open(article.url, '_blank');
+  });
 }
 
-function onNavLinkClick(query) {
-  fetchNews(query);
+let navLinkCurrentActiveElement = null;
+
+function onNavLinkClick(id) {
+  fetchNews(id);
+
+  const navItem = document.getElementById(id);
+  navLinkCurrentActiveElement?.classList.remove('active');
+  navLinkCurrentActiveElement = navItem;
+  navLinkCurrentActiveElement.classList.add('active');
 }
+
+// Search function
+const searchBtn = document.getElementById('search-button');
+
+searchBtn.addEventListener('click', () => {
+  const searchQuery = document.getElementById('search-query');
+  console.log(searchQuery.value);
+
+  fetchNews(searchQuery.value);
+  searchQuery.value = '';
+
+  navLinkCurrentActiveElement?.classList.remove('active');
+  navLinkCurrentActiveElement = null;
+});

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>News App</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="./logo/favicon_io/favicon-32x32.png" />
   </head>
   <body>
     <nav>
@@ -15,17 +16,35 @@
         </a>
 
         <ul class="nav-links flex">
-          <li class="nav-link-hover" onclick="onNavLinkClick('ipl')">IPL</li>
-          <li class="nav-link-hover" onclick="onNavLinkClick('Business')">
+          <li class="nav-link-hover" id="IPL" onclick="onNavLinkClick('IPL')">
+            IPL
+          </li>
+          <li
+            class="nav-link-hover"
+            id="Business"
+            onclick="onNavLinkClick('Business')"
+          >
             Business
           </li>
-          <li class="nav-link-hover" onclick="onNavLinkClick('Technology')">
+          <li
+            class="nav-link-hover"
+            id="Technology"
+            onclick="onNavLinkClick('Technology')"
+          >
             Technology
           </li>
-          <li class="nav-link-hover" onclick="onNavLinkClick('Science')">
+          <li
+            class="nav-link-hover"
+            id="Science"
+            onclick="onNavLinkClick('Science')"
+          >
             Science
           </li>
-          <li class="nav-link-hover" onclick="onNavLinkClick('Politics')">
+          <li
+            class="nav-link-hover"
+            id="Politics"
+            onclick="onNavLinkClick('Politics')"
+          >
             Politics
           </li>
         </ul>
@@ -51,7 +70,7 @@
         <div class="news-card-header">
           <img
             src="https://placeholder.pics/svg/360x240"
-            alt="place holder"
+            alt="News Image"
             id="news-card-img"
           />
         </div>
